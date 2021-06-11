@@ -13,6 +13,10 @@ app.use(cors())
 
 app.use('/posts', postsRoutes)
 
+app.get('/', (req, res)=> {
+  res.send('Hello to MERN-APP-CUI')
+})
+
 
 // mongodb connect
 const PORT = process.env.PORT || 5000
