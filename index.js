@@ -13,7 +13,7 @@ app.use(cors())
 
 app.use('/posts', postsRoutes)
 
-app.get('/', (req, res)=> {
+app.get('/', (req, res) => {
   res.send('Hello to MERN-APP-CUI')
 })
 
