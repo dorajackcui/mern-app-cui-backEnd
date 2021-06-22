@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose  from 'mongoose' 
 import postsRoutes from './routes/posts.js'
+import userRoutes from './routes/user.js'
 
 const app = express()
 dotenv.config()
@@ -12,6 +13,7 @@ app.use(express.json({ limit:'30mb', extended : true }))
 app.use(cors())
 
 app.use('/posts', postsRoutes)
+app.use('/users', userRoutes)
 
 app.get('/', (req, res) => {
   res.send('Hello to MERN-APP-CUI！')
