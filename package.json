@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "devStart": "nodemon index.js"
+    "devStart": "nodemon index.js",
+    "deleteUsers": "node ./config/deleteUsersScript.js",
+    "deletePosts": "node ./config/deletePostsScript.js"
   },
   "keywords": [],
   "author": "",
