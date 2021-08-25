@@ -38,7 +38,7 @@ export const getPostsBySearch = async (req, res) => {
     // convert to regExp for mongoDB
     const title = new RegExp(searchQuery, 'i')
     const posts = await PostMessage.find({ 
-      $or: [ {title}, {tags: { $in: tags.split(',') }} ]
+      $or: [ {title: title}, {tags: { $in: tags.split(',') }}, {tags: title} ]
     })
     
     res.status(200).json({ data: posts })
@@ -109,7 +109,7 @@ export const likePost = async (req, res) => {
   }else {
     //delete like
     postLike.likes.filter((id) => id !== String(req.userId))
-  }
+  } 
  
   const updatedPost = await PostMessage.findByIdAndUpdate(id, postLike, {new:true})
 
